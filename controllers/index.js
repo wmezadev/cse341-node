@@ -1,7 +1,5 @@
-HomeController = (req, res) => {
-    res.status(200).send('William Meza');
-};
+const ContactsController = require('./contacts');
   
 module.exports = {
-    HomeController,
+    ContactsController
 };

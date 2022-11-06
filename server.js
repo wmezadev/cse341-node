@@ -10,16 +10,18 @@ const port = process.env.PORT || 3000;
 app
   .use(cors())
   .use(bodyParser.json())
-  .use(require('./routes'))
+  .use((req, res, next) => {
+    res.setHeader('Content-Type', 'application/json')
+    next();
+  })
+  .use(require('./routes'));
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
-
-mongodb.initDb((err, mongodb) => {
+mongodb.initDb((err) => {
   if (err) {
-    console.log(err);
+    console.error(err);
   } else {
-    console.log(`Connected to DB and listening on ${port}`);
+    app.listen(port, () => {
+      console.log(`Connected to DB and listening on ${port}`)
+    });
   }
 });
