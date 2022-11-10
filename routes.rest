@@ -10,7 +10,7 @@ POST http://localhost:8080/contacts HTTP/1.1
 content-type: application/json
 
 {
-    "firstName":"Gabby",
+    "firstName":"Gabby 2",
     "lastName":"Castillo",
     "email": "gcastycas@mail.com",
     "favoriteColor":"Pink",
@@ -25,6 +25,8 @@ content-type: application/json
     "firstName": "William",
     "lastName": "Meza",
     "email": "wilmeza@mail.com",
-    "favoriteColor": "Grey",
+    "favoriteColor": "Blue",
     "birthday": "14/11/1993"
 }
+### DELETE contact
+DELETE http://localhost:8080/contacts/636c8de3c3556ac4250657a2 HTTP/1.1

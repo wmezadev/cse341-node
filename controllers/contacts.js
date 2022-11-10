@@ -47,4 +47,21 @@ const update = async (req, res) => {
   }
 };
 
-module.exports = { index, show, store, update };
+const destroy = async (req, res) => {
+  try {
+    const userId = new ObjectId(req.params.id);
+    const response = await mongodb
+      .getDb()
+      .db()
+      .collection('contacts')
+      .remove({ _id: userId }, true);
+    if (!(response.deletedCount > 0)) {
+      throw new Error('Error while deleting contact.');
+    }
+    res.status(204).send();
+  } catch (err) {
+    res.status(500).json(err);
+  }
+};
+
+module.exports = { index, show, store, update, destroy };
