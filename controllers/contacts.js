@@ -18,4 +18,15 @@ const show = async (req, res) => {
   });
 };
 
-module.exports = { index, show };
+const store = async (req, res) => {
+  const { firstName, lastName, email, favoriteColor, birthday } = req.body;
+  const contact = { firstName, lastName, email, favoriteColor, birthday };
+  try {
+    const response = await mongodb.getDb().db().collection('contacts').insertOne(contact);
+    res.status(201).json(response);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+};
+
+module.exports = { index, show, store };
