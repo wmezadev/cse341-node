@@ -1,4 +1,4 @@
-const { MongoClient } = require("mongodb");
+const { MongoClient } = require('mongodb');
 const dotenv = require('dotenv');
 dotenv.config();
 let dbConnection;
@@ -20,5 +20,5 @@ module.exports = {
 
   getDb: () => {
     return dbConnection;
-  },
+  }
 };

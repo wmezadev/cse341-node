@@ -11,7 +11,7 @@ app
   .use(cors())
   .use(bodyParser.json())
   .use((req, res, next) => {
-    res.setHeader('Content-Type', 'application/json')
+    res.setHeader('Content-Type', 'application/json');
     next();
   })
   .use(require('./routes'));
@@ -21,7 +21,7 @@ mongodb.initDb((err) => {
     console.error(err);
   } else {
     app.listen(port, () => {
-      console.log(`Connected to DB and listening on ${port}`)
+      console.log(`Connected to DB and listening on ${port}`);
     });
   }
 });

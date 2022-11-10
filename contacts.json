@@ -1,23 +1,23 @@
 {
-    "contact": {
-      "firstName": "William",
-      "lastName": "Meza",
-      "email": "wilmeza@mail.com",
-      "favoriteColor": "Blue",
-      "birthday": "14/11/1993"
-    },
-    "contact2": {
-      "firstName": "Mayfra",
-      "lastName": "Useche",
-      "email": "mayuseche@mail.com",
-      "favoriteColor": "Purple",
-      "birthday": "16/02/1997"
-    },
-    "contact3": {
-      "firstName": "Marcel",
-      "lastName": "Useche",
-      "email": "mauseche@mail.com",
-      "favoriteColor": "Red",
-      "birthday": "01/01/2021"
-    }
+  "contact": {
+    "firstName": "William",
+    "lastName": "Meza",
+    "email": "wilmeza@mail.com",
+    "favoriteColor": "Blue",
+    "birthday": "14/11/1993"
+  },
+  "contact2": {
+    "firstName": "Mayfra",
+    "lastName": "Useche",
+    "email": "mayuseche@mail.com",
+    "favoriteColor": "Purple",
+    "birthday": "16/02/1997"
+  },
+  "contact3": {
+    "firstName": "Marcel",
+    "lastName": "Useche",
+    "email": "mauseche@mail.com",
+    "favoriteColor": "Red",
+    "birthday": "01/01/2021"
   }
+}
