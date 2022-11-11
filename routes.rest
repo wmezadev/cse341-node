@@ -30,3 +30,36 @@ content-type: application/json
 }
 ### DELETE contact
 DELETE http://localhost:8080/contacts/636c8de3c3556ac4250657a2 HTTP/1.1
+
+// PRODUCTION ENVIROMENT
+### Get all contacts
+GET https://wmezadev-cs341.onrender.com/contacts
+
+### Get contact by id
+GET https://wmezadev-cs341.onrender.com/contacts/636745da5552a197d58b1f19
+
+### Create contact
+POST https://wmezadev-cs341.onrender.com/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "firstName":"Gabby 2",
+    "lastName":"Castillo",
+    "email": "gcastycas@mail.com",
+    "favoriteColor":"Pink",
+    "birthday":"14/07/1992"
+}
+
+### PUT contact
+PUT https://wmezadev-cs341.onrender.com/contacts/636745da5552a197d58b1f19 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "William",
+    "lastName": "Meza",
+    "email": "wilmeza@mail.com",
+    "favoriteColor": "Blue",
+    "birthday": "14/11/1993"
+}
+### DELETE contact
+DELETE https://wmezadev-cs341.onrender.com/contacts/636c8de3c3556ac4250657a2 HTTP/1.1

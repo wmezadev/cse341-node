@@ -54,7 +54,7 @@ const destroy = async (req, res) => {
       .getDb()
       .db()
       .collection('contacts')
-      .remove({ _id: userId }, true);
+      .deleteOne({ _id: userId }, true);
     if (!(response.deletedCount > 0)) {
       throw new Error('Error while deleting contact.');
     }
