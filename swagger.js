@@ -8,7 +8,7 @@ const doc = {
     description: 'BYUI Course API'
   },
   host: `${process.env.HOST}`,
-  schemes: ['http']
+  schemes: ['http', 'https']
 };
 
 const outputFile = './swagger.json';
