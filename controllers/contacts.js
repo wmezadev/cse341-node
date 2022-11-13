@@ -4,7 +4,7 @@ const ObjectId = require('mongodb').ObjectId;
 const index = async (req, res) => {
   const result = await mongodb.getDb().db().collection('contacts').find();
   result.toArray().then((lists) => {
-    res.status(200).json(lists);
+    res.status(200).setHeader('Content-Type', 'application/json').json(lists);
   });
 };
 
@@ -12,7 +12,7 @@ const show = async (req, res) => {
   const userId = new ObjectId(req.params.id);
   const result = await mongodb.getDb().db().collection('contacts').find({ _id: userId });
   result.toArray().then((lists) => {
-    res.status(200).json(lists[0]);
+    res.status(200).setHeader('Content-Type', 'application/json').json(lists[0]);
   });
 };
 
@@ -21,10 +21,10 @@ const store = async (req, res) => {
     const { firstName, lastName, email, favoriteColor, birthday } = req.body;
     const contact = { firstName, lastName, email, favoriteColor, birthday };
     const response = await mongodb.getDb().db().collection('contacts').insertOne(contact);
-    res.status(201).json(response);
+    res.status(201).setHeader('Content-Type', 'application/json').json(response);
   } catch (err) {
     // TODO: add a Log handler feature instead of using console.error(error);
-    res.status(500).json(err);
+    res.status(500).setHeader('Content-Type', 'application/json').json(err);
   }
 };
 
@@ -43,7 +43,7 @@ const update = async (req, res) => {
     }
     res.status(204).send();
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).setHeader('Content-Type', 'application/json').json(err);
   }
 };
 
@@ -60,7 +60,7 @@ const destroy = async (req, res) => {
     }
     res.status(204).send();
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).setHeader('Content-Type', 'application/json').json(err);
   }
 };
 

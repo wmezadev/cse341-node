@@ -1,8 +1,8 @@
 const index = async (req, res) => {
-  res.status(200).json({
+  res.status(200).setHeader('Content-Type', 'application/json').json({
     author: '@wmezadev',
     apiVersion: 'v1',
-    routes: [{ uri: '/contacts', methods: ['GET', 'POST', 'PUT', 'DELETE'] }]
+    docs: '/api-docs'
   });
 };
 
