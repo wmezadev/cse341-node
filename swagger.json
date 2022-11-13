@@ -7,7 +7,9 @@
   },
   "host": "wmezadev-cs341.onrender.com",
   "basePath": "/",
-  "schemes": ["https"],
+  "schemes": [
+    "http"
+  ],
   "paths": {
     "/": {
       "get": {
